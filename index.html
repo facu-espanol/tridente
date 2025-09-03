@@ -527,6 +527,33 @@
     </form>
     <p id="msg" style="display:none; color:#0f0; margin-top:1rem;">✅ ¡Gracias! Tu propuesta fue enviada.</p>
   </section>
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const iframe = document.getElementById('hidden_iframe');
+      const msg = document.getElementById('msg');
+
+      // Aseguramos que el <iframe> tenga el mismo "name" que el target del form
+      iframe.name = 'hidden_iframe';
+      form.target = 'hidden_iframe';
+
+      let submitted = false;
+
+      // Marcamos que se envió (para distinguir del primer load del iframe al cargar la página)
+      form.addEventListener('submit', function () {
+        submitted = true;
+      });
+
+      // Cuando el iframe termina de cargar la respuesta de Google Forms:
+      iframe.addEventListener('load', function () {
+        if (!submitted) return; // ignora el primer load inicial
+        msg.style.display = 'block';   // muestra el "Gracias"
+        form.reset();                  // opcional: limpia el formulario
+        submitted = false;             // resetea la marca
+      });
+    })();
+  </script>
+
 
   <!-- 🎮 Juego -->
   <section id="juego">
