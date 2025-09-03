@@ -1,287 +1,353 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Tridente - Consejo Zonal UNPSJB</title>
-  <style>
-    /* ----------- Reset y base ----------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(180deg, #000 0%, #111 100%);
-      color: #fff;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Tridente - Consejo Zonal UNPSJB</title>
+    <style>
+        /* ----------- Reset y base ----------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* ----------- Header ----------- */
-    header {
-      background: #000;
-      text-align: center;
-      padding: 3rem 1rem;
-      border-bottom: 2px solid #fff;
-      animation: fadeInDown 1s ease;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      letter-spacing: 3px;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #fff, #aaa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #bbb;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* ----------- Navegación ----------- */
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(20, 20, 20, 0.9);
-      backdrop-filter: blur(6px);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 1rem;
-      z-index: 1000;
-      border-bottom: 1px solid #444;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-      transition: color 0.3s;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background: #fff;
-      transition: width 0.3s;
-    }
-    nav a:hover {
-      color: #f1c40f;
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #000 0%, #111 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-    /* ----------- Secciones ----------- */
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-      animation: fadeIn 1.2s ease;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border-bottom: 2px solid #f1c40f;
-      display: inline-block;
-      padding-bottom: 5px;
-      animation: glow 2s infinite alternate;
-    }
+        /* ----------- Header ----------- */
+        header {
+            background: #000;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 2px solid #fff;
+            animation: fadeInDown 1s ease;
+        }
 
-    .propuestas ul {
-      list-style: none;
-      padding: 0;
-    }
-    .propuestas li {
-      margin: 1rem 0;
-      padding: 1rem;
-      background: #111;
-      border-radius: 10px;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .propuestas li:hover {
-      transform: translateY(-5px);
-      background: #222;
-    }
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .principios p, .cz p {
-      margin: 1rem 0;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
+        header p {
+            font-size: 1.2rem;
+            color: #bbb;
+        }
 
-    /* ----------- Logos ----------- */
-    .logos {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    .logos img {
-      height: 80px;
-      transition: transform 0.3s;
-      filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
-    }
-    .logos img:hover {
-      transform: scale(1.1);
-    }
+        /* ----------- Navegación ----------- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(20, 20, 20, 0.9);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 1rem;
+            z-index: 1000;
+            border-bottom: 1px solid #444;
+        }
 
-    /* ----------- Formulario ----------- */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 600px;
-      margin: 2rem auto 0;
-      text-align: left;
-    }
-    input, textarea, button {
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    input, textarea {
-      background: #222;
-      color: #fff;
-      outline: none;
-    }
-    input:focus, textarea:focus {
-      border: 2px solid #f1c40f;
-    }
-    button {
-      background: #f1c40f;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
-    }
-    button:hover {
-      background: #d4ac0d;
-      transform: translateY(-3px);
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s;
+        }
 
-    /* ----------- Footer ----------- */
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 2rem;
-      border-top: 2px solid #333;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    footer a {
-      color: #f1c40f;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    footer a:hover {
-      color: #fff;
-    }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: #fff;
+            transition: width 0.3s;
+        }
 
-    /* ----------- Animaciones ----------- */
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes glow {
-      from {text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f;}
-      to {text-shadow: 0 0 20px #fff, 0 0 30px #f1c40f;}
-    }
-  </style>
+        nav a:hover {
+            color: #f1c40f;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ----------- Secciones ----------- */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            animation: fadeIn 1.2s ease;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #f1c40f;
+            display: inline-block;
+            padding-bottom: 5px;
+            animation: glow 2s infinite alternate;
+        }
+
+        .propuestas ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .propuestas li {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #111;
+            border-radius: 10px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .propuestas li:hover {
+            transform: translateY(-5px);
+            background: #222;
+        }
+
+        .principios p,
+        .cz p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* ----------- Logos ----------- */
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logos img {
+            height: 80px;
+            transition: transform 0.3s;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+        }
+
+        .logos img:hover {
+            transform: scale(1.1);
+        }
+
+        /* ----------- Formulario ----------- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            text-align: left;
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        input,
+        textarea {
+            background: #222;
+            color: #fff;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border: 2px solid #f1c40f;
+        }
+
+        button {
+            background: #f1c40f;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background: #d4ac0d;
+            transform: translateY(-3px);
+        }
+
+        /* ----------- Footer ----------- */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 2rem;
+            border-top: 2px solid #333;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #f1c40f;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* ----------- Animaciones ----------- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f;
+            }
+
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #f1c40f;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Lista Negra - EL TRIDENTE 🔱</h1>
-    <p>Consejo Zonal - UNPSJB Sede Puerto Madryn</p>
-  </header>
+    <header>
+        <h1>Lista Negra - EL TRIDENTE 🔱</h1>
+        <p>Consejo Zonal - UNPSJB Sede Puerto Madryn</p>
+    </header>
 
-  <nav>
-    <a href="#slogan">Slogan</a>
-    <a href="#propuestas">Propuestas</a>
-    <a href="#principios">Principios</a>
-    <a href="#cz">Consejo Zonal</a>
-    <a href="#contacto">Propone!</a>
-  </nav>
+    <nav>
+        <a href="#slogan">Slogan</a>
+        <a href="#propuestas">Propuestas</a>
+        <a href="#principios">Principios</a>
+        <a href="#cz">Consejo Zonal</a>
+        <a href="#contacto">Propone!</a>
+    </nav>
 
-  <section id="slogan">
-    <h2>El Tridente</h2>
-    <p>Somos la unión de tres Centros de Estudiantes que luchan por una sede en crecimiento y una mejor convivencia.</p>
-    <p><b>Este 10 de septiembre votanos para que todas las voces sean escuchadas.</b></p>
-    
-    <div class="logos">
-      <img src="colmena.jpeg" alt="La Colmena">
-      <img src="franca.jpeg" alt="Franca Austral">
-      <img src="ing.jpeg" alt="Lista 256">
-    </div>
-  </section>
+    <section id="slogan">
+        <h2>El Tridente</h2>
+        <p>Somos la unión de tres Centros de Estudiantes que luchan por una sede en crecimiento y una mejor convivencia.
+        </p>
+        <p><b>Este 10 de septiembre votanos para que todas las voces sean escuchadas.</b></p>
 
-  <section id="propuestas">
-    <h2>Nuestras Propuestas</h2>
-    <div class="propuestas">
-      <ul>
-        <li>Velar por la transparencia de los contratos de los espacios licitados de la universidad.</li>
-        <li>Acompañar a estudiantes en situaciones de violencia dentro y fuera de la institución.</li>
-        <li>Asambleas abiertas con estudiantes antes de cada junta del consejo.</li>
-        <li>Conformar un claustro estudiantil diverso en el Consejo Zonal.</li>
-        <li>Debatir el cambio del sistema electoral para elecciones más democráticas.</li>
-      </ul>
-    </div>
-  </section>
+        <div class="logos">
+            <img src="colmena.jpeg" alt="La Colmena">
+            <img src="franca.jpeg" alt="Franca Austral">
+            <img src="ing.jpeg" alt="Lista 256">
+        </div>
+    </section>
 
-  <section id="principios">
-    <h2>Principios de Nuestra Lista</h2>
-    <div class="principios">
-      <p>⚫ Independencia política de toda autoridad local, provincial o nacional.</p>
-      <p>⚫ Compromiso con la democracia participativa y la libertad de expresión.</p>
-      <p>⚫ Velamos por el bienestar de todos los estudiantes, sin importar su facultad.</p>
-    </div>
-  </section>
+    <section id="propuestas">
+        <h2>Nuestras Propuestas</h2>
+        <div class="propuestas">
+            <ul>
+                <li>Velar por la transparencia de los contratos de los espacios licitados de la universidad.</li>
+                <li>Acompañar a estudiantes en situaciones de violencia dentro y fuera de la institución.</li>
+                <li>Asambleas abiertas con estudiantes antes de cada junta del consejo.</li>
+                <li>Conformar un claustro estudiantil diverso en el Consejo Zonal.</li>
+                <li>Debatir el cambio del sistema electoral para elecciones más democráticas.</li>
+            </ul>
+        </div>
+    </section>
 
-  <section id="cz">
-    <h2>¿Qué es el Consejo Zonal?</h2>
-    <div class="cz">
-      <p>Es el órgano de cogobierno universitario que gestiona cada sede, administra recursos y mejora la vida académica.</p>
-      <p>Desde el claustro estudiantil, defendemos los derechos de los estudiantes y llevamos sus demandas a este espacio.</p>
-      <p>Actualmente, las 4 bancas son de estudiantes de Jurídicas. Apostamos por una <b>pluralidad</b> de facultades representadas.</p>
-    </div>
-  </section>
+    <section id="principios">
+        <h2>Principios de Nuestra Lista</h2>
+        <div class="principios">
+            <p>⚫ Independencia política de toda autoridad local, provincial o nacional.</p>
+            <p>⚫ Compromiso con la democracia participativa y la libertad de expresión.</p>
+            <p>⚫ Velamos por el bienestar de todos los estudiantes, sin importar su facultad.</p>
+        </div>
+    </section>
 
-  <section id="contacto">
-    <h2>¿Tenés alguna propuesta? Contanos</h2>
-    <form action="mailto:tridentelistanegra@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <textarea name="mensaje" rows="5" placeholder="Escribí tu propuesta aquí..." required></textarea>
-      <button type="submit">Enviar propuesta</button>
-    </form>
-  </section>
-  
-  
+    <section id="cz">
+        <h2>¿Qué es el Consejo Zonal?</h2>
+        <div class="cz">
+            <p>Es el órgano de cogobierno universitario que gestiona cada sede, administra recursos y mejora la vida
+                académica.</p>
+            <p>Desde el claustro estudiantil, defendemos los derechos de los estudiantes y llevamos sus demandas a este
+                espacio.</p>
+            <p>Actualmente, las 4 bancas son de estudiantes de Jurídicas. Apostamos por una <b>pluralidad</b> de
+                facultades representadas.</p>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Lista Negra - El Tridente | UNPSJB Puerto Madryn</p>
-    <p>Seguinos en <a href="https://instagram.com/tridente_pm" target="_blank">Instagram @tridente_pm</a></p>
-  </footer>
+    <section id="contacto">
+        <h2>¿Tenés alguna propuesta? Contanos</h2>
+
+        <!-- iframe oculto -->
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+        <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLSeB_CKfALulysiD9fVNld63Oi-pkjExqn9_zPdu9YRd0IsP3g/formResponse"
+            method="POST" target="hidden_iframe"
+            onsubmit="this.reset(); document.getElementById('msg').style.display='block';">
+
+            <input type="text" name="entry.610920449" placeholder="Nombre" required>
+            <input type="email" name="entry.1292731406" placeholder="Correo" required>
+            <textarea name="entry.2063626872" rows="5" placeholder="Mensaje/propuesta" required></textarea>
+
+            <button type="submit">Enviar propuesta</button>
+        </form>
+
+        <p id="msg" style="display:none; color:#0f0; margin-top:1rem;">
+            ✅ ¡Gracias! Tu propuesta fue enviada.
+        </p>
+    </section>
+
+
+
+    <footer>
+        <p>© 2025 Lista Negra - El Tridente | UNPSJB Puerto Madryn</p>
+        <p>Seguinos en <a href="https://instagram.com/tridente_pm" target="_blank">Instagram @tridente_pm</a></p>
+    </footer>
 
 </body>
+
 </html>
