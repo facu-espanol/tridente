@@ -8,8 +8,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* ----------- Reset y base ----------- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(180deg, #000 0%, #111 100%);
@@ -24,6 +32,7 @@
       padding: 3rem 1rem;
       border-bottom: 2px solid #fff;
     }
+
     header h1 {
       font-size: 2.5rem;
       letter-spacing: 3px;
@@ -33,7 +42,11 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    header p { font-size: 1.2rem; color: #bbb; }
+
+    header p {
+      font-size: 1.2rem;
+      color: #bbb;
+    }
 
     /* ----------- Navegación ----------- */
     nav {
@@ -48,6 +61,7 @@
       z-index: 1000;
       border-bottom: 1px solid #444;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -55,6 +69,7 @@
       position: relative;
       transition: color 0.3s;
     }
+
     nav a::after {
       content: '';
       position: absolute;
@@ -65,8 +80,14 @@
       background: #fff;
       transition: width 0.3s;
     }
-    nav a:hover { color: #f1c40f; }
-    nav a:hover::after { width: 100%; }
+
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
 
     /* ----------- Secciones ----------- */
     section {
@@ -75,6 +96,7 @@
       margin: auto;
       text-align: center;
     }
+
     section h2 {
       font-size: 2rem;
       margin-bottom: 1.5rem;
@@ -92,31 +114,37 @@
       max-width: 1000px;
       margin: 2rem auto;
     }
+
     .carousel {
       display: flex;
       transition: transform 0.6s ease-in-out;
     }
+
     .card {
-      flex: 0 0 33.333%; /* 3 cards visibles en desktop */
+      flex: 0 0 33.333%;
+      /* 3 cards visibles en desktop */
       background: #111;
       margin: 0 10px;
       border-radius: 12px;
       padding: 1.5rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
+
     .card i {
       font-size: 2rem;
       color: #f1c40f;
       margin-bottom: 1rem;
     }
+
     .card p {
       font-size: 1rem;
       line-height: 1.4;
     }
+
     .carousel-buttons {
       position: absolute;
       top: 50%;
@@ -125,8 +153,9 @@
       justify-content: space-between;
       transform: translateY(-50%);
     }
+
     .carousel-buttons button {
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
       border: none;
       color: #fff;
       font-size: 1.5rem;
@@ -134,12 +163,14 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .carousel-buttons button:hover {
-      background: rgba(241,196,15,0.7);
+      background: rgba(241, 196, 15, 0.7);
     }
 
     /* ----------- Principios ----------- */
-    .principios p, .cz p {
+    .principios p,
+    .cz p {
       margin: 1rem 0;
       font-size: 1.1rem;
       line-height: 1.6;
@@ -154,12 +185,16 @@
       margin-top: 2rem;
       flex-wrap: wrap;
     }
+
     .logos img {
       height: 80px;
       transition: transform 0.3s;
-      filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
     }
-    .logos img:hover { transform: scale(1.1); }
+
+    .logos img:hover {
+      transform: scale(1.1);
+    }
 
     /* ----------- Formulario ----------- */
     form {
@@ -170,20 +205,28 @@
       margin: 2rem auto 0;
       text-align: left;
     }
-    input, textarea, button {
+
+    input,
+    textarea,
+    button {
       padding: 12px;
       border: none;
       border-radius: 8px;
       font-size: 1rem;
     }
-    input, textarea {
+
+    input,
+    textarea {
       background: #222;
       color: #fff;
       outline: none;
     }
-    input:focus, textarea:focus {
+
+    input:focus,
+    textarea:focus {
       border: 2px solid #f1c40f;
     }
+
     button {
       background: #f1c40f;
       color: #000;
@@ -191,6 +234,7 @@
       cursor: pointer;
       transition: background 0.3s, transform 0.3s;
     }
+
     button:hover {
       background: #d4ac0d;
       transform: translateY(-3px);
@@ -205,20 +249,33 @@
       font-size: 0.9rem;
       color: #aaa;
     }
+
     footer a {
       color: #f1c40f;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
     }
-    footer a:hover { color: #fff; }
+
+    footer a:hover {
+      color: #fff;
+    }
 
     /* ----------- Responsive ----------- */
     @media (max-width: 900px) {
-      .card { flex: 0 0 50%; } /* 2 visibles */
+      .card {
+        flex: 0 0 50%;
+      }
+
+      /* 2 visibles */
     }
+
     @media (max-width: 600px) {
-      .card { flex: 0 0 100%; } /* 1 visible */
+      .card {
+        flex: 0 0 100%;
+      }
+
+      /* 1 visible */
     }
   </style>
 </head>
@@ -253,11 +310,21 @@
     <h2>Nuestras Propuestas</h2>
     <div class="carousel-container">
       <div class="carousel" id="carousel">
-        <div class="card"><i class="fa-solid fa-scale-balanced"></i><p>Velar por la transparencia de los contratos de los espacios licitados de la universidad.</p></div>
-        <div class="card"><i class="fa-solid fa-hand-holding-heart"></i><p>Acompañar a estudiantes en situaciones de violencia dentro y fuera de la institución.</p></div>
-        <div class="card"><i class="fa-solid fa-users"></i><p>Asambleas abiertas con estudiantes antes de cada junta del consejo.</p></div>
-        <div class="card"><i class="fa-solid fa-people-arrows"></i><p>Conformar un claustro estudiantil diverso en el Consejo Zonal.</p></div>
-        <div class="card"><i class="fa-solid fa-vote-yea"></i><p>Debatir el cambio del sistema electoral para elecciones más democráticas.</p></div>
+        <div class="card"><i class="fa-solid fa-scale-balanced"></i>
+          <p>Velar por la transparencia de los contratos de los espacios licitados de la universidad.</p>
+        </div>
+        <div class="card"><i class="fa-solid fa-hand-holding-heart"></i>
+          <p>Acompañar a estudiantes en situaciones de violencia dentro y fuera de la institución.</p>
+        </div>
+        <div class="card"><i class="fa-solid fa-users"></i>
+          <p>Asambleas abiertas con estudiantes antes de cada junta del consejo.</p>
+        </div>
+        <div class="card"><i class="fa-solid fa-people-arrows"></i>
+          <p>Conformar un claustro estudiantil diverso en el Consejo Zonal.</p>
+        </div>
+        <div class="card"><i class="fa-solid fa-vote-yea"></i>
+          <p>Debatir el cambio del sistema electoral para elecciones más democráticas.</p>
+        </div>
       </div>
       <div class="carousel-buttons">
         <button id="prev">&#10094;</button>
@@ -275,21 +342,45 @@
 
   <section id="cz">
     <h2>¿Qué es el Consejo Zonal?</h2>
-    <p>Es el órgano de cogobierno universitario que gestiona cada sede, administra recursos y mejora la vida académica.</p>
-    <p>Desde el claustro estudiantil, defendemos los derechos de los estudiantes y llevamos sus demandas a este espacio.</p>
-    <p>Actualmente, las 4 bancas son de estudiantes de Jurídicas. Apostamos por una <b>pluralidad</b> de facultades representadas.</p>
+    <p>Es el órgano de cogobierno universitario que gestiona cada sede, administra recursos y mejora la vida académica.
+    </p>
+    <p>Desde el claustro estudiantil, defendemos los derechos de los estudiantes y llevamos sus demandas a este espacio.
+    </p>
+    <p>Actualmente, las 4 bancas son de estudiantes de Jurídicas. Apostamos por una <b>pluralidad</b> de facultades
+      representadas.</p>
   </section>
 
   <section id="contacto">
     <h2>¿Tenés alguna propuesta? Contanos</h2>
-    <form action="https://formsubmit.co/tridentelistanegra@gmail.com" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <textarea name="mensaje" rows="5" placeholder="Mensaje/propuesta" required></textarea>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <form id="contactForm"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSeB_CKfALulysiD9fVNld63Oi-pkjExqn9_zPdu9YRd0IsP3g/formResponse"
+      method="POST" target="hidden_iframe" autocomplete="on">
+
+      <input type="text" name="entry.610920449" placeholder="Nombre" required>
+      <input type="email" name="entry.1292731406" placeholder="Correo" required>
+      <textarea name="entry.2063626872" rows="5" placeholder="Mensaje/propuesta" required></textarea>
+
       <button type="submit">Enviar propuesta</button>
     </form>
+
+    <p id="msg" style="display:none; color:#0f0; margin-top:1rem;">
+      ✅ ¡Gracias! Tu propuesta fue enviada.
+    </p>
+
+    <script>
+      let submitted = false;
+      document.getElementById('contactForm').addEventListener('submit', () => { submitted = true; });
+      document.getElementById('hidden_iframe').addEventListener('load', () => {
+        if (submitted) {
+          document.getElementById('contactForm').reset();
+          document.getElementById('msg').style.display = 'block';
+          submitted = false;
+        }
+      });
+    </script>
   </section>
 
   <footer>
@@ -330,4 +421,5 @@
   </script>
 
 </body>
+
 </html>
